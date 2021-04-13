@@ -1,9 +1,9 @@
-iimport csv
+import csv
 import datetime
 
 from django.core.management.base import BaseCommand, CommandError
 
-from map.models import Chipmunk
+from squirrel.models import Chipmunk
 
 def str_to_bool(x):
     if x.lower() == 'true':
