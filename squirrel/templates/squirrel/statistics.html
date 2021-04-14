@@ -1,0 +1,59 @@
+<!doctype html>
+
+<html>
+	<head>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<!-- Required meta tags -->
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    	<!-- Bootstrap CSS -->
+    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	
+	<title> Sighting Stats </title>
+	
+<style>
+.left {
+  position: absolute;
+  left: 40px;
+  #width: 300px;
+  padding: 10px;
+}
+</style>
+	</head>
+
+	<body class = "left">
+	<form method = 'GET'>
+		<h1> Squirrels Sightings Statistics </h1>
+		
+		<br>
+		Total Counts:
+		<ul>
+			<li>There is a total of {{total_count}} squirrels </li>
+		</ul>
+		<br>
+
+		Age Stats:
+		<ul>
+			<li> Count of Adult Squirrels: {{age_adult}} </li>
+			<li> Count of Juvenile Squirrels: {{age_juvenile}} </li>
+
+		</ul>
+
+		<br>
+		Location Stats:
+		<ul>
+                        <li> Count of Above Ground Squirrels: {{location_above}} </li>
+                        <li> Count of Ground Plane Squirrels: {{location_plane}} </li>
+                </ul>
+		<br>
+
+		Movement Stats:
+		<ul>
+			<li> Count of Running Squirrels: {{running_true}} </li>
+			<li> Count of Eating Squirrels: {{eating_true}} </li>
+			<li> Count of Approaching Squirrels: {{approach_true}} </li>
+		</ul>
+	</form>
+	</body>
+</html>
