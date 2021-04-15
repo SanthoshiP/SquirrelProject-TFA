@@ -34,7 +34,7 @@ def edit_sightings(request, unique_squirrel_id):
                 'form': form,
         }
 
-        return render(request, 'squirrel/edit_sightings.html', context)
+    return render(request, 'squirrel/edit_sightings.html', context)
 
 def add_sightings(request):
     
@@ -52,9 +52,9 @@ def add_sightings(request):
                     'form': form,
             }
     
-            return render(request, 'squirrel/add_sightings.html', context)
+    return render(request, 'squirrel/add_sightings.html', context)
 
-def statistics(request):
+def stats(request):
     total_count = Chipmunk.objects.all().count()
     age_juvenile = Chipmunk.objects.filter(age='Juvenile').count()
     age_adult = Chipmunk.objects.filter(age='Adult').count()
@@ -73,6 +73,6 @@ def statistics(request):
             'eating_true': eating_true,
             'approach_true': approach_true,
     }
-    return render(request, 'squirrel/statistics.html',context)
+    return render(request, 'squirrel/stats.html',context)
 
 # Create your views here.
