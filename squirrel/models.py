@@ -35,7 +35,7 @@ class Chipmunk(models.Model):
     )
         
     date = models.DateField(
-	help_text=_('date seen'),
+	help_text=_('Date seen')
     )
 
     JUVENILE = 'Juvenile'
@@ -47,7 +47,7 @@ class Chipmunk(models.Model):
     ]
 
     age = models.CharField(
-            help_text=_('Age of squirrel'),
+            help_text=_(''),
 	    choices=AGE_CHOICES,
             max_length=50,
             null=True,
@@ -64,7 +64,7 @@ class Chipmunk(models.Model):
     )
     
     primary_fur_color = models.CharField(
-		help_text = _('Primary fur color'),
+		help_text = _(''),
 		choices = COLOR_CHOICES,
                 max_length=50,
                 null=True,
@@ -80,14 +80,14 @@ class Chipmunk(models.Model):
     )
         
     location = models.CharField(
-	    help_text = _('location: above ground or ground plane'),
+	    help_text = _(''),
 	    choices = LOCATION_CHOICES,
             max_length=50,
             null=True,
     )
 
     specific_location = models.CharField(
-            help_text = _('Sepecific location'),
+            help_text = _(''),
             max_length=100,
 	    null = True,
             blank = True,
@@ -109,21 +109,21 @@ class Chipmunk(models.Model):
             help_text = _('whether the squirrel is foraging')
         )
     other_activities = models.CharField(
-	    help_text = _('other activities'),
+	    help_text = _('fill in with what the squirrel is doing'),
 	    max_length = 150,
 	    null = True,
             blank = True,
         )
     kuks = models.BooleanField(
-            help_text = _('kuks sound')
+            help_text = _('whether the squirrel sounds kuks')
         )
 
     quaas = models.BooleanField(
-	    help_text = _('quaas sound')
+	    help_text = _('whether the squirrel sounds quaas')
         )
 
     moans = models.BooleanField(
-	    help_text = _('moans sound')
+	    help_text = _('whether the squirrel sounds moans')
         )
     tail_flags = models.BooleanField(
 	    help_text = _('whether the squirrel is flagging tail')
