@@ -61,23 +61,16 @@ def add_sightings(request):
 from squirrel.models import Chipmunk
 
 def statistics(request):
-    total_count = Chipmunk.objects.all().count()
-    age_juvenile = Chipmunk.objects.filter(age='Juvenile').count()
-    age_adult = Chipmunk.objects.filter(age='Adult').count()
-    location_above = Chipmunk.objects.filter(location='Above Ground').count()
-    location_plane = Chipmunk.objects.filter(location='Ground Plane').count()
-    running_true = Chipmunk.objects.filter(running=True).count()
-    #running_false = Squirrels.objects.filter(running=False).count()
-    eating_true = Chipmunk.objects.filter(eating=True).count()
-    approach_true = Chipmunk.objects.filter(approaches=True).count()
+    number_of_squirrels = Chipmunk.objects.all().count()
+    chasing_yes = Chipmunk.objects.filter(chasing=True).count()
+    climbing_yes = Chipmunk.objects.filter(climbing=True).count()
+    foraging_yes=Chipmunk.objects.filter(foraging=True).count()
+    eating_yes = Chipmunk.objects.filter(eating=True).count()
     context = {
-            'total_count':total_count,
-            'age_juvenile': age_juvenile,
-            'age_adult': age_adult,
-            'location_above': location_above,
-            'location_plane': location_plane,
-            'running_true': running_true,
-            'eating_true': eating_true,
-            'approach_true': approach_true,
+            'number_of_squirrels':number_of_squirrels,
+            'chasing_yes':chasing_yes,
+            'climbing_yes':climbing_yes,
+            'foraging_yes':foraging_yes,
+            'eating_yes': eating_yes,
     }
     return render(request, 'squirrel/statistics.html', context)

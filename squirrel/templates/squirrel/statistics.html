@@ -24,36 +24,37 @@
 
 	<body class = "left">
 	<form method = 'GET'>
-		<h1> Squirrels Sightings Statistics </h1>
+		<h1> Statistics of Squirrels </h1>
 		
 		<br>
-		Total Counts:
+		Count of Squirrels:
 		<ul>
-			<li>There is a total of {{total_count}} squirrels </li>
+			<li>There is a total of {{number_of_squirrels}} squirrels </li>
 		</ul>
 		<br>
 
-		Age Stats:
+		Chasing Status:
 		<ul>
-			<li> Count of Adult Squirrels: {{age_adult}} </li>
-			<li> Count of Juvenile Squirrels: {{age_juvenile}} </li>
-
+			<li> Count of Squirrels chasings: {{chasing_yes}} </li>
 		</ul>
 
 		<br>
-		Location Stats:
+		Climbing Status:
 		<ul>
-                        <li> Count of Above Ground Squirrels: {{location_above}} </li>
-                        <li> Count of Ground Plane Squirrels: {{location_plane}} </li>
+                        <li> Count of Squirrels climbing: {{climbing_yes}} </li>
                 </ul>
 		<br>
 
-		Movement Stats:
+		Foraging Status:
 		<ul>
-			<li> Count of Running Squirrels: {{running_true}} </li>
-			<li> Count of Eating Squirrels: {{eating_true}} </li>
-			<li> Count of Approaching Squirrels: {{approach_true}} </li>
+			<li> Count of Squirrels Foraging: {{foraging_yes}} </li>
 		</ul>
+		<br>
+
+		Eating Status:
+                <ul>
+                        <li> Count ofSquirrels eating: {{eating_yes}} </li>
+                </ul>
 	</form>
 	</body>
 </html
