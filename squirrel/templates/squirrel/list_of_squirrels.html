@@ -1,33 +1,44 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+	<title>List of Squirrels</title>
+
+        <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+	
 	<head>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    	  <head>
-    	<!-- Required meta tags -->
-    	<meta charset="utf-8">
-    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    	<!-- Bootstrap CSS -->
-    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-	<title>Here's your Squirrel Tracker</title>
 	<style>
-	.left {
-  	position: absolute;
-  	left: 40px;
-  	padding: 10px;
-	}
+		table {
+  		font-family: arial, sans-serif;
+  		border-collapse: collapse;
+  		width: 100%;
+		}
+
+		td, th {
+  		border: 1px solid #dddddd;
+  		text-align: left;
+  		padding: 8px;
+		}
+
+		tr:nth-child(even) {
+  		background-color: #dddddd;
+		}
+	
+		body,h1 {
+		font-family: "Raleway", sans-serif}
+		body, html {height: 100%}
+		.bgimg {
+  			background-image: url('https://images.squarespace-cdn.com/content/v1/58d2e8b7893fc0d3d1ce9388/1492268308443-7WPXB1JKG7OKHH4PG8PH/ke17ZwdGBToddI8pDm48kH-0mTLZIpaE-cgx517tEO8UqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcgxd-6t4jCK4mhX8qw2wz-vNSofKW1Nwicctt4xmizJiEM7kZwjd7uFzNIkc-i4vs/220+Central+Park+South+Newest+Privately+Available+Unit+is+%2480+Million+Duplex?format=1500w');
+  			min-height: 100%;
+  			background-position: center;
+  			background-size: cover;
+		}
 	</style>
-    	</head>
-	
-	
-	<body class = "left">
-   	<h1> List of All Sightings </h1>
-		<!-- Optional JavaScript -->
-    		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	</head>    
+   
+	<body>
+	<h2>The List of Squirrels</h2>	
 
 	<p>
 	
@@ -41,18 +52,29 @@
 	<p>
 
         <form action = 'stats/'>
-                <button type = 'submit'> View sightings stats </button>
+                <button type = 'submit'> View statistics </button>
         </form>	
 	
 	
 	</p>
     	<p>
+
+	<table>
+		<tr>
+   	 	<th>Squirrel ID</th>
+    		<th>Date</th>
+		</tr>
+
     	<ul>
 		{% for squirrel in squirrels %}
-		<li><a href="{{squirrel.unique_squirrel_id}}"> {{ squirrel.unique_squirrel_id }} </a></li>
-		<li>{{squirrel.date}}</li>
+		<tr>
+		<th><a href="{{squirrel.unique_squirrel_id}}"> {{ squirrel.unique_squirrel_id }} </a></th>
+		<th>{{squirrel.date}}</th>
+		</tr>
 		{% endfor %}
     	</ul>
+
+	</table>
    	</p>
     </body>
 
