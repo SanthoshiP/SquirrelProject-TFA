@@ -5,8 +5,8 @@ Squirrel Project TFA is a final project for IEOR E4501 Tools for Analytics with 
 ## Project Description
 
 Squirrel Tracker tracks for all squirrels in Central Park. The Data is taken from 
-<li><a href="https://data.cityofnewyork.us/Environment/2018-Central-Park-Squirrel-Census-Squirrel-Data/vfnx-vebw">2018 Central Park Squirrel Census </a>!</li>
-You can see where the squirrel is using Map, the list of squirrels, update and add new sightings.
+<a href="https://data.cityofnewyork.us/Environment/2018-Central-Park-Squirrel-Census-Squirrel-Data/vfnx-vebw">2018 Central Park Squirrel Census </a>
+  You can see where the squirrel is using Map, the list of squirrels, update and add new sightings.
 
 ## Group Name 
 Project Group 20
