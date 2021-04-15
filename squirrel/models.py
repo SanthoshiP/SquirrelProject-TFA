@@ -1,7 +1,10 @@
 
 from django.db import models
 from django.utils.translation import gettext as _
- 
+from django.urls import reverse
+class Meta:
+    managed=True
+
 class Chipmunk(models.Model):
     longitude = models.FloatField(
     	    help_text=_('longitude of squirrels'),
