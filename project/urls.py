@@ -16,12 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from squirrel import views
-
+from squirrel.views import map
+from sightings.views import edit_sightings, add_sightings, statistics
 
 urlpatterns = [
     path('',views.home),
     path('admin/', admin.site.urls),
     path('map/',include('squirrel.urls')),
-    path('sightings/', include('sightings.urls'))
-        
+    path('sightings/add/', add_sightings, name ='add'),
+    path('sightings/stats/', statistics, name='stats'),
+    path('sightings/', include('sightings.urls')),       
 ]

@@ -4,9 +4,11 @@ from django.shortcuts import get_object_or_404
 
 from django.http import HttpResponse
 
-from .forms import Form
+from sightings.forms import Form
 
 from squirrel.models import Chipmunk
+
+from django.views.generic.edit import CreateView, DeleteView
 
 from django.db.models import Count
 
@@ -17,8 +19,10 @@ def list_of_squirrels(request):
             }        
     return render(request, 'squirrel/list_of_squirrels.html', context)
 
+from squirrel.models import Chipmunk
+
 def edit_sightings(request, unique_squirrel_id):
-    squirrels = Chipmunk.objects.get(unique_squirrel_id = unique_squirrel_id)
+    squirrels = get_object_or_404(Chipmunk, unique_squirrel_id = unique_squirrel_id)
 
     if request.method == 'POST':
         form = Form(request.POST, instance=squirrels)
@@ -26,15 +30,15 @@ def edit_sightings(request, unique_squirrel_id):
         if form.is_valid():
             form.save()
             return redirect('/sightings/')
+    else:
+        form = Form(instance=squirrels)
 
-        else:
-            form = Form(instance=squirrels)
-
-        context = {
-                'form': form,
+    context = {
+            'form': form
         }
+    return render(request, 'squirrel/edit_sightings.html', context)
 
-        return render(request, 'squirrel/edit_sightings.html', context)
+from squirrel.models import Chipmunk
 
 def add_sightings(request):
     
@@ -45,14 +49,16 @@ def add_sightings(request):
             form.save()
             return redirect ('/sightings/')
 
-        else:
-            form = Form()
+    else:
+        form = Form()
 
-            context = {
-                    'form': form,
-            }
+    context = {
+            'form': form
+    }
     
-            return render(request, 'squirrel/add_sightings.html', context)
+    return render(request, 'squirrel/add_sightings.html', context)
+
+from squirrel.models import Chipmunk
 
 def statistics(request):
     total_count = Chipmunk.objects.all().count()
@@ -61,6 +67,7 @@ def statistics(request):
     location_above = Chipmunk.objects.filter(location='Above Ground').count()
     location_plane = Chipmunk.objects.filter(location='Ground Plane').count()
     running_true = Chipmunk.objects.filter(running=True).count()
+    #running_false = Squirrels.objects.filter(running=False).count()
     eating_true = Chipmunk.objects.filter(eating=True).count()
     approach_true = Chipmunk.objects.filter(approaches=True).count()
     context = {
@@ -73,6 +80,4 @@ def statistics(request):
             'eating_true': eating_true,
             'approach_true': approach_true,
     }
-    return render(request, 'squirrel/statistics.html',context)
-
-# Create your views here.
+    return render(request, 'squirrel/statistics.html', context)
